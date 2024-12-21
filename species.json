@@ -1,0 +1,210 @@
+[
+    {
+        "id": 1,
+        "name": "creature1",
+        "description": "description",
+        "image": "images/species/1.png",
+        "frequency": 1,
+        "stats": {
+            "avuncularity": 1,
+            "destrucity": 1,
+            "panache": 1,
+            "spiciness": 1
+        }
+    },
+    {
+        "id": 2,
+        "name": "creature2",
+        "description": "description",
+        "image": "images/species/2.png",
+        "frequency": 0.5,
+        "stats": {
+            "avuncularity": 1,
+            "destrucity": 1,
+            "panache": 1,
+            "spiciness": 1
+        }
+    },
+    {
+        "id": 3,
+        "name": "creature3",
+        "description": "description",
+        "image": "images/species/3.png",
+        "frequency": 0.25,
+        "stats": {
+            "avuncularity": 1,
+            "destrucity": 1,
+            "panache": 1,
+            "spiciness": 1
+        }
+    },
+    {
+        "id": 4,
+        "name": "creature4",
+        "description": "description",
+        "image": "images/species/4.png",
+        "frequency": 0.25,
+        "stats": {
+            "avuncularity": 1,
+            "destrucity": 1,
+            "panache": 1,
+            "spiciness": 1
+        }
+    },
+    {
+        "id": 5,
+        "name": "creature5",
+        "description": "description",
+        "image": "images/species/5.png",
+        "frequency": 0.15,
+        "stats": {
+            "avuncularity": 1,
+            "destrucity": 1,
+            "panache": 1,
+            "spiciness": 1
+        }
+    },
+    {
+        "id": 6,
+        "name": "creature6",
+        "description": "description",
+        "image": "images/species/6.png",
+        "frequency": 0.1,
+        "stats": {
+            "avuncularity": 1,
+            "destrucity": 1,
+            "panache": 1,
+            "spiciness": 1
+        }
+    },
+    {
+        "id": 7,
+        "name": "creature7",
+        "description": "description",
+        "image": "images/species/7.png",
+        "frequency": 0.05,
+        "stats": {
+            "avuncularity": 1,
+            "destrucity": 1,
+            "panache": 1,
+            "spiciness": 1
+        }
+    },
+    {
+        "id": 8,
+        "name": "creature8",
+        "description": "description",
+        "image": "images/species/8.png",
+        "frequency": 0.05,
+        "stats": {
+            "avuncularity": 1,
+            "destrucity": 1,
+            "panache": 1,
+            "spiciness": 1
+        }
+    },
+    {
+        "id": 9,
+        "name": "creature9",
+        "description": "description",
+        "image": "images/species/9.png",
+        "frequency": 0.04,
+        "stats": {
+            "avuncularity": 1,
+            "destrucity": 1,
+            "panache": 1,
+            "spiciness": 1
+        }
+    },
+    {
+        "id": 10,
+        "name": "creature10",
+        "description": "description",
+        "image": "images/species/10.png",
+        "frequency": 0.04,
+        "stats": {
+            "avuncularity": 1,
+            "destrucity": 1,
+            "panache": 1,
+            "spiciness": 1
+        }
+    },
+    {
+        "id": 11,
+        "name": "creature11",
+        "description": "description",
+        "image": "images/species/11.png",
+        "frequency": 0.03,
+        "stats": {
+            "avuncularity": 1,
+            "destrucity": 1,
+            "panache": 1,
+            "spiciness": 1
+        }
+    },
+    {
+        "id": 12,
+        "name": "creature12",
+        "description": "description",
+        "image": "images/species/12.png",
+        "frequency": 0.03,
+        "stats": {
+            "avuncularity": 1,
+            "destrucity": 1,
+            "panache": 1,
+            "spiciness": 1
+        }
+    },
+    {
+        "id": 13,
+        "name": "creature13",
+        "description": "description",
+        "image": "images/species/13.png",
+        "frequency": 0.02,
+        "stats": {
+            "avuncularity": 1,
+            "destrucity": 1,
+            "panache": 1,
+            "spiciness": 1
+        }
+    },
+    {
+        "id": 14,
+        "name": "creature14",
+        "description": "description",
+        "image": "images/species/14.png",
+        "frequency": 0.02,
+        "stats": {
+            "avuncularity": 1,
+            "destrucity": 1,
+            "panache": 1,
+            "spiciness": 1
+        }
+    },
+    {
+        "id": 15,
+        "name": "creature15",
+        "description": "description",
+        "image": "images/species/15.png",
+        "frequency": 0.01,
+        "stats": {
+            "avuncularity": 1,
+            "destrucity": 1,
+            "panache": 1,
+            "spiciness": 1
+        }
+    },
+    {
+        "id": 16,
+        "name": "creature16",
+        "description": "description",
+        "image": "images/species/16.png",
+        "frequency": 0.01,
+        "stats": {
+            "avuncularity": 1,
+            "destrucity": 1,
+            "panache": 1,
+            "spiciness": 1
+        }
+    }
+]
