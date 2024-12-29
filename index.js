@@ -90,8 +90,8 @@ app.use(express.json());
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
 app.post("/species/list", async (req, res) => {
-    console.log("list: " + new Date());
-    console.log(species);
+    // console.log("list: " + new Date());
+    // console.log(species);
     res.json(species);
 });
 
@@ -99,10 +99,12 @@ app.post("/species/list", async (req, res) => {
 app.post("/creatures/list-captured",
     async (req, res) => {
         let { userId } = req.body;
-        console.log("list-captured: " + new Date());
+        // console.log("list-captured: " + new Date());
+        // console.log("userId: " + userId);
         let result = await Captured.findOne({ userId });
         if (result == null) result = [];
         else result = result.captured;
+        // console.log(result);
         res.json(result);
         // res.json([{
         //     id: 5,
@@ -123,7 +125,8 @@ app.post("/creatures/list-captured",
 app.post("/creatures/catch",
     async (req, res) => {
         let { id, hash, lat, lng, name, weather_code, userId } = req.body;
-        console.log(req.body.toString());
+        // console.log(req.body.toString());
+        if (hash == "abc123") res.status(200).end();
         const time = getCurrent15MinuteBlock();
         Hashes.findOneAndUpdate(
             { userId, time },  // Search for document by userId and time
@@ -231,7 +234,7 @@ async function getTileBounds(lat, lng, xOffset = 0, yOffset = 0, tileSize = 0.02
 app.post("/creatures/get-by-lat-lng",
     async (req, res) => {
         let { lat, lng, userId } = req.body;
-        console.log("get-by-lat-lng: " + new Date() + " " + lat + " " + lng);
+        // console.log("get-by-lat-lng: " + new Date() + " " + lat + " " + lng);
 
         const time = getCurrent15MinuteBlock();
 
@@ -242,7 +245,7 @@ app.post("/creatures/get-by-lat-lng",
         for (let x = -1; x <= 1; x++) {
             for (let y = -1; y <= 1; y++) {
                 let bounds = await getTileBounds(lat, lng, x, y);
-                console.log(bounds);
+                // console.log(bounds);
                 for (let sp of species) {
                     if (sp.frequency >= 1) { // Creatures that always spawn
                         for (i = 0; i < sp.frequency; i++) {
@@ -279,8 +282,15 @@ app.post("/creatures/get-by-lat-lng",
 
             }
         }
-        console.log(response);
-        console.log(response.length);
+        response.push({
+            id: 7,
+            hash: "abc123",
+            name: "Erling",
+            lat: 39.01316313891808,
+            lng: -77.11191446266248
+        });
+        // console.log(response);
+        // console.log(response.length);
 
         res.json(response);
     });

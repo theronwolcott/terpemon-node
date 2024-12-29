@@ -5,6 +5,8 @@
         "description": "description",
         "image": "images/species/1.png",
         "frequency": 1,
+        "bestOf": 3,
+        "winPct": 0.5,
         "stats": {
             "avuncularity": 1,
             "destrucity": 1,
@@ -18,6 +20,8 @@
         "description": "description",
         "image": "images/species/2.png",
         "frequency": 0.5,
+        "bestOf": 3,
+        "winPct": 0.5,
         "stats": {
             "avuncularity": 1,
             "destrucity": 1,
@@ -31,6 +35,8 @@
         "description": "description",
         "image": "images/species/3.png",
         "frequency": 0.25,
+        "bestOf": 3,
+        "winPct": 0.5,
         "stats": {
             "avuncularity": 1,
             "destrucity": 1,
@@ -44,6 +50,8 @@
         "description": "description",
         "image": "images/species/4.png",
         "frequency": 0.25,
+        "bestOf": 5,
+        "winPct": 0.5,
         "stats": {
             "avuncularity": 1,
             "destrucity": 1,
@@ -57,6 +65,8 @@
         "description": "description",
         "image": "images/species/5.png",
         "frequency": 0.15,
+        "bestOf": 5,
+        "winPct": 0.5,
         "stats": {
             "avuncularity": 1,
             "destrucity": 1,
@@ -70,6 +80,8 @@
         "description": "description",
         "image": "images/species/6.png",
         "frequency": 0.1,
+        "bestOf": 5,
+        "winPct": 0.55,
         "stats": {
             "avuncularity": 1,
             "destrucity": 1,
@@ -83,6 +95,8 @@
         "description": "description",
         "image": "images/species/7.png",
         "frequency": 0.05,
+        "bestOf": 5,
+        "winPct": 0.6,
         "stats": {
             "avuncularity": 1,
             "destrucity": 1,
@@ -96,6 +110,8 @@
         "description": "description",
         "image": "images/species/8.png",
         "frequency": 0.05,
+        "bestOf": 13,
+        "winPct": 0.65,
         "stats": {
             "avuncularity": 1,
             "destrucity": 1,
@@ -109,6 +125,8 @@
         "description": "description",
         "image": "images/species/9.png",
         "frequency": 0.04,
+        "bestOf": 5,
+        "winPct": 0.65,
         "stats": {
             "avuncularity": 1,
             "destrucity": 1,
@@ -122,6 +140,8 @@
         "description": "description",
         "image": "images/species/10.png",
         "frequency": 0.04,
+        "bestOf": 5,
+        "winPct": 0.65,
         "stats": {
             "avuncularity": 1,
             "destrucity": 1,
@@ -135,6 +155,8 @@
         "description": "description",
         "image": "images/species/11.png",
         "frequency": 0.03,
+        "bestOf": 7,
+        "winPct": 0.7,
         "stats": {
             "avuncularity": 1,
             "destrucity": 1,
@@ -148,6 +170,8 @@
         "description": "description",
         "image": "images/species/12.png",
         "frequency": 0.03,
+        "bestOf": 7,
+        "winPct": 0.7,
         "stats": {
             "avuncularity": 1,
             "destrucity": 1,
@@ -161,6 +185,8 @@
         "description": "description",
         "image": "images/species/13.png",
         "frequency": 0.02,
+        "bestOf": 7,
+        "winPct": 0.75,
         "stats": {
             "avuncularity": 1,
             "destrucity": 1,
@@ -174,6 +200,8 @@
         "description": "description",
         "image": "images/species/14.png",
         "frequency": 0.02,
+        "bestOf": 7,
+        "winPct": 0.8,
         "stats": {
             "avuncularity": 1,
             "destrucity": 1,
@@ -187,6 +215,8 @@
         "description": "description",
         "image": "images/species/15.png",
         "frequency": 0.01,
+        "bestOf": 7,
+        "winPct": 0.85,
         "stats": {
             "avuncularity": 1,
             "destrucity": 1,
@@ -200,6 +230,8 @@
         "description": "description",
         "image": "images/species/16.png",
         "frequency": 0.01,
+        "bestOf": 7,
+        "winPct": 0.9,
         "stats": {
             "avuncularity": 1,
             "destrucity": 1,
