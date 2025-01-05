@@ -286,8 +286,15 @@ app.post("/creatures/get-by-lat-lng",
             id: 7,
             hash: "abc123",
             name: "Erling",
-            lat: 39.01316313891808,
-            lng: -77.11191446266248
+            lat: 39.012483930361064,
+            lng: -77.11093870527134
+        });
+        response.push({
+            id: 5,
+            hash: "abc12345",
+            name: "Kevin",
+            lat: 39.01313951523564,
+            lng: -77.11090123379418
         });
         // console.log(response);
         // console.log(response.length);
