@@ -106,27 +106,12 @@
     },
     {
         "id": 8,
-        "name": "creature8",
-        "description": "description",
+        "name": "Charmob",
+        "description": "Charmob is a dazzling and chaotic spectacle, often spotted where crowds gather—pep rallies, concerts, and parades. Its swarm of blinking eyes and fluttering lashes make it nearly impossible to look away, while its ever-smiling face radiates charisma. Said to embody the social energy of Maryland’s bustling student unions and club fairs, Charmob thrives in high-energy environments and loves to be the center of attention. Despite its bubbly appearance, it has a knack for overwhelming opponents with coordinated movements, much like a well-rehearsed flash mob. Trainers often find themselves distracted by its shifting expressions and playful antics, making it harder to capture than it first appears. Folklore claims its gaze can inspire creativity and teamwork, making it popular among group leaders and performers.",
         "image": "images/species/8.png",
         "frequency": 0.15,
         "bestOf": 13,
         "winPct": 0.56,
-        "stats": {
-            "avuncularity": 1,
-            "destrucity": 1,
-            "panache": 1,
-            "spiciness": 1
-        }
-    },
-    {
-        "id": 9,
-        "name": "Charmob",
-        "description": "Charmob is a dazzling and chaotic spectacle, often spotted where crowds gather—pep rallies, concerts, and parades. Its swarm of blinking eyes and fluttering lashes make it nearly impossible to look away, while its ever-smiling face radiates charisma. Said to embody the social energy of Maryland’s bustling student unions and club fairs, Charmob thrives in high-energy environments and loves to be the center of attention. Despite its bubbly appearance, it has a knack for overwhelming opponents with coordinated movements, much like a well-rehearsed flash mob. Trainers often find themselves distracted by its shifting expressions and playful antics, making it harder to capture than it first appears. Folklore claims its gaze can inspire creativity and teamwork, making it popular among group leaders and performers.",
-        "image": "images/species/9.png",
-        "frequency": 0.10,
-        "bestOf": 5,
-        "winPct": 0.58,
         "stats": {
             "avuncularity": 8,
             "destrucity": 6,
@@ -135,13 +120,13 @@
         }
     },
     {
-        "id": 10,
+        "id": 9,
         "name": "Quadroar",
-        "description": "Quadroar is a loud and boisterous creature, often found near stadiums, marching bands, and festival grounds where noise and excitement are at their peak. Its four main eyes—and one perched high on a flexible stalk—are always scanning for action, ensuring it never misses a moment of drama. Known for its booming roar and wild, pom-pom-like hands, Quadroar thrives in chaotic environments, feeding off energy and attention. Its exaggerated expressions and dramatic presence make it a favorite mascot for competitive teams, but its loud personality can sometimes be a bit much for quieter trainers. Folklore suggests its roar can boost confidence and courage, making it a popular companion for high-stakes competitions",
-        "image": "images/species/10.png",
-        "frequency": 0.07,
+        "description": "Quadroar is a loud and boisterous creature, often found near stadiums, marching bands, and festival grounds where noise and excitement are at their peak. Its four main eyes—and one perched high on a flexible stalk—are always scanning for action, ensuring it never misses a moment of drama. Known for its booming roar and wild, pom-pom-like hands, Quadroar thrives in chaotic environments, feeding off energy and attention. Its exaggerated expressions and dramatic presence make it a favorite mascot for competitive teams, but its loud personality can sometimes be a bit much for quieter trainers. Folklore suggests its roar can boost confidence and courage, making it a popular companion for high-stakes competitions.",
+        "image": "images/species/9.png",
+        "frequency": 0.10,
         "bestOf": 5,
-        "winPct": 0.60,
+        "winPct": 0.58,
         "stats": {
             "avuncularity": 7,
             "destrucity": 6,
@@ -150,13 +135,13 @@
         }
     },
     {
-        "id": 11,
+        "id": 10,
         "name": "Oculeia",
         "description": "Oculeia is a curious and contemplative creature, often found lingering near libraries, museums, and quiet gardens. Its single, unblinking eye is said to hold ancient wisdom, inspiring those who encounter it to pause and reflect. The delicate yellow tufts atop its head resemble laurel leaves, adding to its air of quiet authority and elegance. Oculeia is a master observer, carefully analyzing its surroundings before making a move, which makes it especially tricky to capture. It’s rumored to have a near-hypnotic gaze, capable of both calming nervous minds and uncovering hidden truths. Legends suggest that those who befriend Oculeia gain heightened focus and insight, making it a coveted companion for strategists and scholars.",
-        "image": "images/species/11.png",
-        "frequency": 0.04,
-        "bestOf": 7,
-        "winPct": 0.62,
+        "image": "images/species/10.png",
+        "frequency": 0.07,
+        "bestOf": 5,
+        "winPct": 0.60,
         "stats": {
             "avuncularity": 7,
             "destrucity": 5,
@@ -165,13 +150,13 @@
         }
     },
     {
-        "id": 12,
+        "id": 11,
         "name": "Splorch",
         "description": "Splorch is a slippery and unpredictable creature, often found near puddles, fountains, and marshy areas—or lurking around the ODK Fountain on UMD’s McKeldin Mall. Its gooey, fluid-like body allows it to slip through tight spaces and evade capture with ease, making it a challenge for even the most experienced trainers. Splorch is playful but mischievous, frequently mimicking voices or hiding in plain sight to startle unsuspecting passersby. Some say its origins trace back to a late-night prank involving Testudo’s statue and too many gallons of slime. Its smaller appendage, affectionately called “Mini-Me,” has a personality of its own, often echoing Splorch’s expressions and antics. Legends claim Splorch’s ever-shifting form represents adaptability, inspiring students to go with the flow and tackle challenges head-on—especially during finals week floods.",
-        "image": "images/species/12.png",
-        "frequency": 0.03,
+        "image": "images/species/11.png",
+        "frequency": 0.04,
         "bestOf": 7,
-        "winPct": 0.64,
+        "winPct": 0.62,
         "stats": {
             "avuncularity": 6,
             "destrucity": 5,
@@ -180,13 +165,13 @@
         }
     },
     {
-        "id": 13,
+        "id": 12,
         "name": "Bogloom",
         "description": "Bogloom is a moody and mysterious creature, often found sulking near marshes, wooded trails, and campus rain gardens—particularly after storms. Its droopy expression and mossy green hue evoke the wetlands surrounding UMD’s Arboretum, where it’s rumored to guard forgotten paths and overgrown spaces. Despite its gloomy demeanor, Bogloom is fiercely protective of its territory and has a surprisingly sharp wit, making it a favorite among those who appreciate subtle humor and sarcasm. Legends say it was born from the runoff of campus rainstorms, absorbing the worries of stressed students during finals week. Trainers who win its trust often find themselves with a deeply loyal companion that thrives in calm, reflective moments. Bogloom’s presence is said to bring patience and resilience to those who need it most.",
-        "image": "images/species/13.png",
-        "frequency": 0.02,
+        "image": "images/species/12.png",
+        "frequency": 0.03,
         "bestOf": 7,
-        "winPct": 0.66,
+        "winPct": 0.64,
         "stats": {
             "avuncularity": 5,
             "destrucity": 6,
@@ -195,13 +180,13 @@
         }
     },
     {
-        "id": 14,
+        "id": 13,
         "name": "Gryphflare",
         "description": "Gryphflare is a fierce and majestic creature, often associated with courage and leadership. Its sharp teeth and vibrant golden crest resemble the fire of UMD’s school spirit, making it a natural guardian of rallies, bonfires, and sporting events. Legends say it was born from the sparks of the Maryland Victory Song, soaring through the night to keep the flame of determination alive. Its bat-like wings allow it to glide swiftly over obstacles, making it a challenging catch for even the most skilled trainers. Gryphflare is fiercely competitive but also deeply loyal, often forming bonds with those who share its passion for winning. Folklore suggests that touching its crest before a competition can ignite confidence and unshakable focus.",
-        "image": "images/species/14.png",
+        "image": "images/species/13.png",
         "frequency": 0.02,
         "bestOf": 7,
-        "winPct": 0.67,
+        "winPct": 0.66,
         "stats": {
             "avuncularity": 7,
             "destrucity": 8,
@@ -210,13 +195,13 @@
         }
     },
     {
-        "id": 15,
+        "id": 14,
         "name": "Tanglurk",
         "description": "Tanglurk is a shaggy, mysterious creature that blends seamlessly into overgrown trails, wooded areas, and forgotten corners of campus. Its tangled fur and retractable eye-stalk make it a master of disguise, peering out from dense foliage to observe passersby before revealing itself. Said to have emerged from the labyrinth of UMD’s older tunnels and hidden spaces, Tanglurk is both a protector of secrets and a seeker of mysteries. Its long, whip-like tongue can snatch objects—or snacks—from surprising distances, keeping curious trainers on edge. Though shy at first, Tanglurk is fiercely intelligent and deeply loyal once trust is earned. Legends say capturing Tanglurk grants insight into hidden patterns and unseen paths, making it a favorite among puzzle-solvers and explorers.",
-        "image": "images/species/15.png",
-        "frequency": 0.01,
+        "image": "images/species/14.png",
+        "frequency": 0.02,
         "bestOf": 7,
-        "winPct": 0.68,
+        "winPct": 0.67,
         "stats": {
             "avuncularity": 6,
             "destrucity": 7,
@@ -225,18 +210,33 @@
         }
     },
     {
-        "id": 16,
+        "id": 15,
         "name": "Slymara",
         "description": "Slymara is a slippery, shape-shifting trickster, often found near hidden corners, dark alleys, and underground tunnels. Its smooth, fluid-like form allows it to slip through cracks and vanish in an instant, making it one of the hardest creatures to catch. Rumored to have originated near UMD’s engineering buildings, where creativity and curiosity run high, Slymara embodies adaptability and cleverness. Its single, unblinking eye sees through deception, and its mischievous grin hints at a playful but cunning personality. Legends say that Slymara thrives on pranks and puzzles, challenging trainers to prove their wit before it can be captured. Those who earn its trust gain a fiercely loyal ally, skilled in evasion and surprise attacks.",
-        "image": "images/species/16.png",
+        "image": "images/species/15.png",
         "frequency": 0.01,
         "bestOf": 7,
-        "winPct": 0.7,
+        "winPct": 0.68,
         "stats": {
             "avuncularity": 5,
             "destrucity": 7,
             "panache": 8,
             "spiciness": 9
+        }
+    },
+    {
+        "id": 16,
+        "name": "Regalith",
+        "description": "Regalith is the undisputed king of Terpémon, a vibrant and majestic creature whose presence commands attention and awe. With its bold pink and purple fur, dramatic horns, and piercing single eye, it exudes confidence and power. Said to have emerged from the heart of the UMD Homecoming bonfire, Regalith represents unyielding pride, perseverance, and victory. Its booming roar echoes across stadiums, inspiring fans and athletes alike to give their all. Despite its fierce appearance, Regalith is deeply loyal to those who prove their worth, testing trainers with trials of courage, wit, and strength before allowing capture. Myths say its fur glows faintly under moonlight, and those lucky enough to encounter it are said to be destined for greatness.",
+        "image": "images/species/16.png",
+        "frequency": 0.01,
+        "bestOf": 7,
+        "winPct": 0.7,
+        "stats": {
+            "avuncularity": 8,
+            "destrucity": 9,
+            "panache": 10,
+            "spiciness": 10
         }
     }
 ]
