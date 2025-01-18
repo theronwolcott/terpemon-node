@@ -9,6 +9,9 @@ const args = process.argv;
 const port = process.env.PORT || args[2] || 3000;
 const app = express();
 const path = require('path');
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'ejs'));
+
 // app.use(cookieParser());
 const species = require("./species.json");
 const names = require("./names.json");
@@ -347,6 +350,10 @@ app.post("/weather",
         const weather = await getWeather(lat, lng);
         res.json(weather);
     });
+
+app.get('/', (req, res) => {
+    res.render('map');
+});
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
