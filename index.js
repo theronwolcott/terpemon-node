@@ -351,8 +351,25 @@ app.post("/weather",
         res.json(weather);
     });
 
-app.get('/', (req, res) => {
-    res.render('map');
+app.get("/", (req, res) => {
+    // Check for optional lat and lng query parameters
+    const { lat, lng } = req.query;
+
+    // If lat and lng are provided, pass them to EJS. Otherwise, fall back to geolocation.
+    if (lat && lng) {
+        const userLat = parseFloat(lat);
+        const userLng = parseFloat(lng);
+        res.render("map", {
+            lat: userLat,
+            lng: userLng
+        });
+    } else {
+        // Fall back to geolocation
+        res.render("map", {
+            lat: 0,  // Default to 0,0 if no query params or geolocation
+            lng: 0
+        });
+    }
 });
 
 app.listen(port, () => {
