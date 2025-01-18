@@ -18,7 +18,7 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
     // Initialize the map
-    const map = L.map('map').setView([0, 0], 16); // Default view until location is retrieved
+    const map = L.map('map').setView([0, 0], 14); // Default view until location is retrieved
   
     // Add OpenStreetMap tiles
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -81,7 +81,7 @@
         async (position) => {
           const { latitude, longitude } = position.coords;
   
-          map.setView([latitude, longitude], 15); // Center the map at the user's location
+          map.setView([latitude, longitude], 14); // Center the map at the user's location
   
           // Draw tiles based on the user's location
           drawTiles(latitude, longitude);
