@@ -25,6 +25,38 @@
       maxZoom: 19,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
+
+  // Function to calculate the tile's aligned position based on a fixed 0.02-degree grid
+  function alignToGrid(coord, tileSize) {
+    return Math.floor(coord / tileSize) * tileSize;
+  }
+
+  // Function to draw tiles
+  function drawTiles(centerLat, centerLng) {
+    const tileSize = 0.02; // Each tile is 0.02 degrees wide/high
+
+    // Align the user's position to the nearest tile grid
+    const alignedLat = alignToGrid(centerLat, tileSize);
+    const alignedLng = alignToGrid(centerLng, tileSize);
+
+    // Loop through a 3x3 grid of tiles centered around the user's aligned tile
+    for (let x = -1; x <= 1; x++) {
+      for (let y = -1; y <= 1; y++) {
+        // Calculate the bounds of each tile
+        const latMin = alignedLat + y * tileSize;
+        const latMax = latMin + tileSize;
+        const lngMin = alignedLng + x * tileSize;
+        const lngMax = lngMin + tileSize;
+
+        // Create a rectangle for the tile
+        L.rectangle([[latMin, lngMin], [latMax, lngMax]], {
+          color: x === 0 && y === 0 ? 'blue' : 'red', // Highlight the center tile in blue
+          weight: 1,
+          fillOpacity: 0.1
+        }).addTo(map);
+      }
+    }
+  }
   
     // Function to add creature markers to the map
     function addCreatureMarkers(creatures) {
@@ -51,6 +83,9 @@
   
           map.setView([latitude, longitude], 15); // Center the map at the user's location
   
+          // Draw tiles based on the user's location
+          drawTiles(latitude, longitude);
+
           try {
             const response = await fetch('/creatures/get-by-lat-lng', {
               method: 'POST',
