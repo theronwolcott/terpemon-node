@@ -45,13 +45,22 @@ Suppose a player is standing at latitude `38.9951` and longitude `-77.1244` duri
 3. The hash determines whether a species spawns in that tile and, if so, assigns its location within the tile.
 4. The result is a list of creatures (with unique names) available in that location for the current time block.
 
+### Production Deployment
+
+The backend project is deployed on a free account on render.com, so it can take 30-40
+seconds to boot up if it hasn't run in a while. I built a webpage to verify that it works 
+so I can visualize the grid and spawning system: 
+- **Terpemon near me**: https://terpemon-node.onrender.com/
+- **Terpemon in D.C.**: https://terpemon-node.onrender.com/?lat=38.89530303519851&lng=-77.03831229990925
+- **Terpemon in London**: https://terpemon-node.onrender.com/?lat=51.50295660380361&lng=-0.13010462129897424  
+
+![Terpemon in London](images/Terpemon-London.png)
+
 ### Advantages of This System
 
 - **Scalability**: By avoiding persistent storage of spawn data, the system scales effortlessly to cover the entire globe.
 - **Fairness**: All players see the same creatures at a given time and location.
 - **Adaptability**: The spawning algorithm can incorporate additional factors (e.g., weather, time of day) without altering its deterministic nature.
-
-![Grid System and Random Placement](images/grid-system.png)
 
 ## Endpoints
 
