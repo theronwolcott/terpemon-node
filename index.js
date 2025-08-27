@@ -5,14 +5,14 @@ const ejs = require("ejs");
 const cookieParser = require("cookie-parser");
 const { v4: uuidv4 } = require("uuid");
 const { get } = require("http");
-const { OpenAI } = require("openai");
+// const { OpenAI } = require("openai");
 const args = process.argv;
 const port = process.env.PORT || args[2] || 3000;
 const app = express();
 const path = require("path");
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "ejs"));
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+// const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 const { writeFile } = require("fs/promises");
 const fs = require("fs");
 
@@ -201,31 +201,31 @@ app.post("/generate-creature", async (req, res) => {
   // Mostly for debugging
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
-  const describeResponse = await openai.chat.completions.create({
-    model: "gpt-4o",
-    messages: [
-      {
-        role: "system",
-        content:
-          "You are a creature encyclopedia. Describe the creature shown in the image in a fun, lore-style way.",
-      },
-      {
-        role: "user",
-        content: [
-          {
-            type: "text",
-            text: "Here is the image. What kind of creature is this?",
-          },
-          {
-            type: "image_url",
-            image_url: {
-              url: `data:image/png;base64,${base64}`,
-            },
-          },
-        ],
-      },
-    ],
-  });
+  // const describeResponse = await openai.chat.completions.create({
+  //   model: "gpt-4o",
+  //   messages: [
+  //     {
+  //       role: "system",
+  //       content:
+  //         "You are a creature encyclopedia. Describe the creature shown in the image in a fun, lore-style way.",
+  //     },
+  //     {
+  //       role: "user",
+  //       content: [
+  //         {
+  //           type: "text",
+  //           text: "Here is the image. What kind of creature is this?",
+  //         },
+  //         {
+  //           type: "image_url",
+  //           image_url: {
+  //             url: `data:image/png;base64,${base64}`,
+  //           },
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // });
 
   //   const newCreature = {
   //     id: currentCreatureId++,
