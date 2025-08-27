@@ -26,6 +26,7 @@ mongoose
   .then(() => console.log("connected"))
   .catch((error) => console.log("did not connect: " + error));
 
+// ONLY store the creatures people actually catch
 const capturedSchema = new mongoose.Schema({
   userId: { type: String, required: true, unique: true },
   captured: [
@@ -132,8 +133,9 @@ app.post("/creatures/list-captured", async (req, res) => {
 
 app.post("/creatures/catch", async (req, res) => {
   let { id, hash, lat, lng, name, weather_code, userId } = req.body;
-  // console.log(req.body.toString());
-  if (hash == "abc123") res.status(200).end();
+  // for testing
+  if (hash.startsWith("abc123")) res.status(200).end();
+  // Make sure we don't show on the map again
   const time = getCurrent15MinuteBlock();
   Hashes.findOneAndUpdate(
     { userId, time }, // Search for document by userId and time
@@ -142,6 +144,7 @@ app.post("/creatures/catch", async (req, res) => {
   ).catch((error) =>
     console.error("Couldn't save Hashes.findOneAndUpdate", error)
   );
+  // Actually add to caught list
   Captured.findOneAndUpdate(
     { userId },
     {
@@ -161,116 +164,12 @@ app.post("/creatures/catch", async (req, res) => {
   res.status(200).end();
 });
 
-// app.post("/generate-creature", async (req, res) => {
-//   const prompt = req.body.prompt;
-//   const response = await openai.responses.create({
-//     model: "gpt-4.1",
-//     input: prompt,
-//     tools: [
-//       {
-//         type: "image_generation",
-//         quality: "high",
-//         size: "1024x1024",
-//         background: "transparent",
-//       },
-//     ],
-//   });
-//   const imageData = response.output.find(
-//     (o) => o.type === "image_generation_call"
-//   );
-
-//   res.send({ imageUrl: imageData.result.url });
-// });
-app.post("/generate-creature", async (req, res) => {
-  const prompt = req.body.prompt;
-  const image = await openai.images.generate({
-    model: "gpt-image-1",
-    prompt,
-    n: 1,
-    size: "1024x1024",
-    background: "transparent",
-  });
-  const imageBuffer = Buffer.from(image.data[0].b64_json, "base64");
-  const base64 = image.data[0].b64_json;
-  await writeFile("output.png", imageBuffer);
-
-  // test to see if size > 0 so file exists
-  const stats = await fs.promises.stat("output.png");
-  console.log("Image size (bytes):", stats.size);
-  if (stats.size === 0) throw new Error("Image file is empty.");
-  // Mostly for debugging
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-
-  // const describeResponse = await openai.chat.completions.create({
-  //   model: "gpt-4o",
-  //   messages: [
-  //     {
-  //       role: "system",
-  //       content:
-  //         "You are a creature encyclopedia. Describe the creature shown in the image in a fun, lore-style way.",
-  //     },
-  //     {
-  //       role: "user",
-  //       content: [
-  //         {
-  //           type: "text",
-  //           text: "Here is the image. What kind of creature is this?",
-  //         },
-  //         {
-  //           type: "image_url",
-  //           image_url: {
-  //             url: `data:image/png;base64,${base64}`,
-  //           },
-  //         },
-  //       ],
-  //     },
-  //   ],
-  // });
-
-  //   const newCreature = {
-  //     id: currentCreatureId++,
-  //     name: "Jonny",
-  //     description: "AI creature",
-  //     image: "",
-  //     bestOf: 1,
-  //     winPct: 0.5,
-  //     stats: {
-  //       hp: 0,
-  //       atk: 0,
-  //       def: 0,
-  //       spd: 0,
-  //     }, // Placeholder stats
-  //   };
-
-  res.send(describeResponse.choices[0].message.content);
-  //   res.send({ imageUrl: image.data[0].url });
-});
-
-// app.post("/creatures/capture",
-//     async (req, res) => {
-//         let { id, lat, lng, weather_code, name } = req.body;
-//         Captured.findOneAndUpdate(
-//             { userId },
-//             {
-//                 $push: {
-//                     captured: {
-//                         $each: [{ id, lat, lng, weather_code, name }]
-//                     }
-//                 }
-//             },
-//             {
-//                 upsert: true,
-//                 new: true
-//             }
-//         ).catch(error => console.error("Couldn't save search", error));
-//     });
-
 async function getHashString(str) {
   // Encode the string as a Uint8Array
   const encoder = new TextEncoder();
   const data = encoder.encode(str);
 
-  // Compute the SHA-1 hash
+  // Compute the SHA-1 hash, tiny difference here = big difference in output "avalanche effect"
   const hashBuffer = await crypto.subtle.digest("SHA-1", data);
 
   // Convert the hash to a hexadecimal string
@@ -304,10 +203,12 @@ async function calcLatLng(time, id, iteration, tile = "", latLng = "") {
   );
   return hash;
 }
+// Round latlng for a tile to bottom left corner
 function roundDownToNearest(value, step, precision = 2) {
   const result = Math.floor(value / step) * step;
   return parseFloat(result.toFixed(precision));
 }
+
 async function getTileBounds(
   lat,
   lng,
@@ -356,11 +257,14 @@ app.post("/creatures/get-by-lat-lng", async (req, res) => {
           // Creatures that always spawn
           for (i = 0; i < sp.frequency; i++) {
             let hash = await getHashString(
+              // Time, species id and bounds make it unique,
+              // i makes sure that two of same species have different hashes
               time + sp.id + bounds.id + i.toString()
             );
             if (caughtHashes.includes(hash)) continue;
             let float = parseInt(hash.slice(1, 9), 16) / 0xffffffff;
             let name = names[Math.floor(float * names.length)];
+            // Randomize within tile
             response.push({
               id: sp.id,
               hash: hash,
@@ -430,50 +334,9 @@ app.post("/creatures/get-by-lat-lng", async (req, res) => {
     lat: 38.98221,
     lng: -77.0932,
   });
-  // console.log(response);
-  // console.log(response.length);
 
   res.json(response);
 });
-// app.post("/creatures/get-by-lat-lng",
-//     async (req, res) => {
-//         let { lat, lng } = req.body;
-//         console.log("get-by-lat-lng: " + new Date() + " " + lat + " " + lng);
-
-//         /// let { lat = 0, lng = 0 } = req.query;
-//         let minlat = lat - 0.01;
-//         let maxlat = lat + 0.01;
-//         let minlng = lng - 0.01;
-//         let maxlng = lng + 0.01;
-//         const time = getCurrent15MinuteBlock();
-
-//         let response = [];
-//         for (let creature of creatures) {
-//             if (creature.frequency >= 1) { // Creatures that always spawn
-//                 for (i = 0; i < creature.frequency; i++) {
-//                     response.push({
-//                         id: creature.id,
-//                         hash: await getHashString(time + creature.id + i.toString()),
-//                         lat: minlat + (await calcLatLng(time, creature.id, i, "lat") * 0.02),
-//                         lng: minlng + (await calcLatLng(time, creature.id, i, "lng") * 0.02)
-//                     });
-//                 }
-//             } else { // Creatures that may or may not spawn
-//                 let hash = await getHashString(time + creature.id + "0");
-//                 // turn hash into a float so it's appearance (or not) is the same for
-//                 // this creature for the entire 15 min block
-//                 if (Math.random() <= parseInt(hash.slice(1, 9), 16) / 0xFFFFFFFF) {
-//                     response.push({
-//                         id: creature.id,
-//                         hash: hash,
-//                         lat: minlat + (await calcLatLng(time, creature.id, 0, "lat") * 0.02),
-//                         lng: minlng + (await calcLatLng(time, creature.id, 0, "lng") * 0.02)
-//                     });
-//                 }
-//             }
-//         }
-//         res.json(response);
-//     });
 
 app.post("/weather", async (req, res) => {
   let { lat, lng } = req.body;
@@ -481,6 +344,7 @@ app.post("/weather", async (req, res) => {
   res.json(weather);
 });
 
+// Test map
 app.get("/", (req, res) => {
   // Check for optional lat and lng query parameters
   const { lat, lng } = req.query;
