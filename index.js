@@ -198,7 +198,7 @@ app.post("/generate-creature", async (req, res) => {
   const stats = await fs.promises.stat("output.png");
   console.log("Image size (bytes):", stats.size);
   if (stats.size === 0) throw new Error("Image file is empty.");
-  // Mostly for debugging 
+  // Mostly for debugging
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
   const describeResponse = await openai.chat.completions.create({
@@ -415,6 +415,20 @@ app.post("/creatures/get-by-lat-lng", async (req, res) => {
     name: "Kevin",
     lat: 39.01313951523564,
     lng: -77.11090123379418,
+  });
+  response.push({
+    id: 1,
+    hash: "abc123456",
+    name: "Z",
+    lat: 38.98641,
+    lng: -77.09559,
+  });
+  response.push({
+    id: 6,
+    hash: "abc1234567",
+    name: "Test",
+    lat: 38.98221,
+    lng: -77.0932,
   });
   // console.log(response);
   // console.log(response.length);
